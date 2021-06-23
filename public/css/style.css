@@ -1,0 +1,18 @@
+.herosection {
+  background-image: url("../img/banner.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 90%;
+  border-radius: 4px;
+  margin: auto;
+}
+
+.success-bk {
+  background-image: url("../img/background.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: #207bfa;
+  height: 640px;
+}
