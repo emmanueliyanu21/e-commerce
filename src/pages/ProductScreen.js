@@ -1,11 +1,22 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
-import products from '../products'
+// import products from '../products'
 import Rating from '../components/Rating'
+import axios from 'axios'
 
 const ProductScreen = ({match}) => {
-    const product = products.find((p) => p._id === match.params.id)
-    console.log(product);
+    // const product = products.find((p) => p._id === match.params.id)
+    const [product, setProduct] = useState([])
+
+     useEffect(() => {
+        const fetchProduct = async () => {
+            const { data } = await axios.get(`/api/products/${match.params.id}`);
+            setProduct(data)
+        }
+        fetchProduct()
+     }, [match])
+    
+    // console.log(product);
     return (
         <div className="product-detail">
             <div className="product-image">
@@ -29,12 +40,6 @@ const ProductScreen = ({match}) => {
                 </div>
                 <div className="icons">
                     <Rating value={product.rating} text={`${product.numReviews}`} />
-                    {/* <span className="iconify iconify-fill" data-icon="ic:baseline-star" data-inline="false"></span>
-                    <span className="iconify iconify-fill" data-icon="ic:baseline-star" data-inline="false"></span>
-                    <span className="iconify iconify-fill" data-icon="ic:baseline-star" data-inline="false"></span>
-                    <span className="iconify iconify-empty" data-icon="ic:baseline-star" data-inline="false"></span>
-                    <span className="iconify iconify-empty" data-icon="ic:baseline-star" data-inline="false"></span>
-                    <span className="text">3.0</span> */}
                 </div>
                 <p>This is the best product I have used in a long while and the
 size fits perfectly and I love the colors!!!!!</p>
@@ -44,7 +49,7 @@ size fits perfectly and I love the colors!!!!!</p>
                 </div>
             </div>
             <div className="button-sections">
-                <Link to="/"  className="btn btn-cart cart-bk">Add to Cart</Link>
+                <Link to="/cart"  className="btn btn-cart cart-bk">Add to Cart</Link>
                 <Link to="/" className="btn btn-cart wishlist-bk">Wishlist</Link>
             </div>
         </div>

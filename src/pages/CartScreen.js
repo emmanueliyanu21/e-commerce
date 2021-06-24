@@ -8,11 +8,17 @@ function CartScreen() {
                     <div className="cart-list-image">
                         <img src="../../img/product2.png" alt="" />
                         <p>2019 Vintage Coca Cola</p>
+                        {/* <p>N18,099.09</p> */}
                     </div>
                     <div className="cart-list-icon">
                         <div className="delete-section">
-                            <i className="iconify" data-icon="ic:baseline-delete" data-inline="false"></i>
+                            <span className="iconify" data-icon="ic:baseline-delete" data-inline="false"></span>
                             <span>Delete</span>
+                        </div>
+                        <div className="adjust-section">
+                            <i class="fas fa-minus"></i>
+                            <span>24</span>
+                            <i class="fas fa-plus"></i>
                         </div>
                     </div>
                 </div>
@@ -23,10 +29,15 @@ function CartScreen() {
                         <img src="../../img/product1.png" alt="" />
                         <p>2019 Vintage Coca Cola</p>
                     </div>
-                    <div className="cart-list-icon">
+                     <div className="cart-list-icon">
                         <div className="delete-section">
-                            <i className="iconify" data-icon="ic:baseline-delete" data-inline="false"></i>
+                            <span className="iconify" data-icon="ic:baseline-delete" data-inline="false"></span>
                             <span>Delete</span>
+                        </div>
+                        <div className="adjust-section">
+                            <i class="fas fa-minus"></i>
+                            <span>24</span>
+                            <i class="fas fa-plus"></i>
                         </div>
                     </div>
                 </div>

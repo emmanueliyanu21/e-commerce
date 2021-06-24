@@ -8,7 +8,7 @@ const Product = ({ product}) => {
                 <Link to={`/product/${product._id}`}>
                     <img src={product.image} alt="" />
                     <p>{product.name}</p>
-                    <h3>{product.price}</h3>
+                    <h3>&#8358;{product.price}</h3>
                     <p>MOQ 4 (pieces)</p>
                 </Link>
             </div>

@@ -1,14 +1,28 @@
-import React from 'react'
-import products from '../products.js'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import Product from '../components/Product.js'
+import Footer from '../components/Footer.js'
+import { listProducts } from '../actions/productActions'
 
 
 function HomeScreen() {
+    const dispatch = useDispatch()
+
+    const productList = useSelector(state => state.productList)
+    const { loading, error, products} = productList
+
+    useEffect(() => {
+        dispatch(listProducts())
+    }, [dispatch])
+
+    // const products = []
+
     return (
-        <div>
-            <div className="header">
+        <>
+            {loading ? (<h2>Loading...</h2>) : error ? (<h3>{error}</h3>) : 
+                <div>
+                    <div className="header">
                 <h2>Trollbasket</h2>
-               
                 <div className="list-wrapper">
                     <div className="ul-list">
                     <span className="iconify" data-icon="ant-design:shopping-cart-outlined" ></span>
@@ -33,7 +47,7 @@ function HomeScreen() {
                     </form>
                     </div>
             </div>
-            <div className="herosection">
+                    <div className="herosection">
                 <h2>Having any <span>issues</span> <br/> with your order? </h2>
                 <button className="btn btn-contact">Contact Us</button>
             </div>
@@ -60,15 +74,14 @@ function HomeScreen() {
                 {products.map(product => (
                     <div key={product._id} className="productitem">
                         <Product product={product} />
-                {/* <img src="../../img/shoe.png" alt="" />
-                <p>{product.name}</p>
-                <h3>&#8358;{product.price}</h3> */}
                 </div>
                 ))}
-        
-       
             </div>
-        </div>
+            </div>
+            }
+            
+            <Footer />
+        </>
     )
 }
 

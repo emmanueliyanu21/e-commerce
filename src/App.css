@@ -89,8 +89,18 @@
 /* Product List Styling */
 .productlist {
   display: flex;
-  /* margin: auto; */
+  flex-direction: row;
   justify-content: space-evenly;
+  flex-flow: wrap;
+}
+
+.productitem {
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+.productitem a {
+  text-decoration: none;
 }
 
 .productitem p {
@@ -105,8 +115,10 @@
   width: 100px;
 }
 
-.productitem {
-  width: 28%;
+@media only screen and (max-width: 768px) {
+  .productitem img {
+    width: 100%;
+  }
 }
 
 .productitem h3 {
@@ -115,6 +127,7 @@
   font-family: "Noto Sans JP", sans-serif;
   margin-top: 2px;
   margin-bottom: 2px;
+  color: #071827;
 }
 
 .productitem h4 {
@@ -226,10 +239,14 @@
 .btn-cart {
   font-family: "Noto Sans JP", sans-serif;
   font-size: 14px;
-  padding: 20px 40px;
+  padding: 15px 40px;
   border-radius: 4px;
   color: #fff;
   font-weight: 600;
+}
+
+.button-sections a {
+  text-decoration: none;
 }
 
 .button-sections {
@@ -452,12 +469,32 @@
 
 .cart-list-image {
   display: flex;
+  justify-content: space-evenly;
   border-bottom: 1px solid #f6f2f2;
   padding-bottom: 15px;
 }
 
 .cart-list-icon {
   padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.delete-section {
+  display: flex;
+  padding-top: 5px;
+}
+
+.adjust-section .fas {
+  border: 1px solid #123cd3;
+  border-radius: 50px;
+  padding: 7px 8px;
+  color: #123cd3;
+}
+
+.adjust-section span {
+  margin-left: 9px;
+  margin-right: 9px;
 }
 
 .cart-list-icon span {
@@ -466,6 +503,37 @@
 }
 
 .cart-list-icon .iconify {
-  color: #ee6f44;
+  color: #e25959;
   font-size: 24px;
+  padding-right: 8px;
 }
+
+/* Footer starts here */
+.footer-handler p {
+  font-family: "Noto Sans JP", sans-serif;
+  margin-top: 0px;
+  font-size: 12px;
+}
+
+.footer-handler {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 0px;
+}
+
+.footer-handler img {
+  width: 25px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #fff;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.3);
+}
+
+.footer-buy {
+  border-top: 1px solid #227eff;
+}
+
+/* Footer ENds here */
