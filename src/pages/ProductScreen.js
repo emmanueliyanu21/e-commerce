@@ -3,6 +3,15 @@ import React from 'react'
 function ProductScreen() {
     return (
         <div className="product-detail">
+            <div className="product-image">
+                <img src="../../img/product.png" alt=""/>
+            </div>
+            <div className="product-details">
+                <p>NIKE Huararche 2019</p>
+                <h3>Get comfy and comfortable with the new 2019 designer
+sneaker for all your events </h3>
+                <h4>&#8358;45,000 - &#8358;80,000  </h4>
+            </div>
             <div className="product-description">
                 <span>Product Description</span>
                 <div className="icon">

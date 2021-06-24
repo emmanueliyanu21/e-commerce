@@ -4,11 +4,9 @@ import React from 'react'
 function HomeScreen() {
     return (
         <div>
-
-            {/* Header Section */}
             <div className="header">
                 <h2>Trollbasket</h2>
-                {/* list */}
+               
                 <div className="list-wrapper">
                     <div className="ul-list">
                     <span class="iconify" data-icon="ant-design:shopping-cart-outlined" ></span>
@@ -26,20 +24,18 @@ function HomeScreen() {
                     <i></i>
                     </div>
                     </div>
-                {/* form */}
+                
                 <div className="header-form">
                 <form action="">
                     <input type="text" placeholder="Search merchbuy"/>
                     </form>
                     </div>
             </div>
-            {/* Banner section */}
             <div className="herosection">
                 <h2>Having any <span>issues</span> <br/> with your order? </h2>
                 <button className="btn btn-contact">Contact Us</button>
             </div>
-        {/* // Category Group */}
-        <div className="categoriesgroup">
+            <div className="categoriesgroup">
             <div className="categories">
                 <img src="../../img/document.png" alt=""/>
                 <p>Product  Categories</p>
@@ -57,9 +53,7 @@ function HomeScreen() {
                 <p>Shops</p>
             </div>
         </div>
-            
-            {/* List of Product */}
-        <div className="productlist">
+            <div className="productlist">
             <div className="productitem">
                 <img src="../../img/shoe.png" alt="" />
                 <p>Free sample small tote bag gucci fen...</p>
@@ -80,8 +74,7 @@ function HomeScreen() {
                 <h3>₦900 - ₦1,500</h3>
                 <p>MOQ 4 (pieces)</p>
             </div>
-        </div>
-            
+        </div>        
         </div>
     )
 }
