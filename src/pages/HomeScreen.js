@@ -1,4 +1,6 @@
 import React from 'react'
+import products from '../products.js'
+import Product from '../components/Product.js'
 
 
 function HomeScreen() {
@@ -9,17 +11,17 @@ function HomeScreen() {
                
                 <div className="list-wrapper">
                     <div className="ul-list">
-                    <span class="iconify" data-icon="ant-design:shopping-cart-outlined" ></span>
+                    <span className="iconify" data-icon="ant-design:shopping-cart-outlined" ></span>
                     <span>Lagos</span>
-                    <i class="fas fa-angle-down"></i>
+                    <i className="fas fa-angle-down"></i>
                 </div>
                     <div className="ul-list">
-                    <i class="iconify" data-icon="mdi:package" ></i>
+                    <i className="iconify" data-icon="mdi:package" ></i>
                     <span>My Orders</span>
                     <i></i>
                 </div>
                     <div className="ul-list">
-                        <span class="iconify" data-icon="ant-design:shopping-cart-outlined" ></span>
+                        <span className="iconify" data-icon="ant-design:shopping-cart-outlined" ></span>
                     <span>Cart</span>
                     <i></i>
                     </div>
@@ -52,29 +54,20 @@ function HomeScreen() {
                 <img src="../../img/document.png" alt=""/>
                 <p>Shops</p>
             </div>
-        </div>
-            <div className="productlist">
-            <div className="productitem">
-                <img src="../../img/shoe.png" alt="" />
-                <p>Free sample small tote bag gucci fen...</p>
-                <h3>₦900 - ₦1,500</h3>
-                <p>MOQ 4 (pieces)</p>
-                </div>
-                
-                
-                <div className="productitem">
-                <img src="../../img/shoe.png" alt="" />
-                <p>Free sample small tote bag gucci fen...</p>
-                <h3>₦900 - ₦1,500</h3>
-                <p>MOQ 4 (pieces)</p>
-                </div>
-                <div className="productitem">
-                <img src="../../img/shoe.png" alt="" />
-                <p>Free sample small tote bag gucci fen...</p>
-                <h3>₦900 - ₦1,500</h3>
-                <p>MOQ 4 (pieces)</p>
             </div>
-        </div>        
+            
+            <div className="productlist">
+                {products.map(product => (
+                    <div key={product._id} className="productitem">
+                        <Product product={product} />
+                {/* <img src="../../img/shoe.png" alt="" />
+                <p>{product.name}</p>
+                <h3>&#8358;{product.price}</h3> */}
+                </div>
+                ))}
+        
+       
+            </div>
         </div>
     )
 }

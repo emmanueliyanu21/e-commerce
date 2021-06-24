@@ -1,21 +1,25 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import products from '../products'
+import Rating from '../components/Rating'
 
-function ProductScreen() {
+const ProductScreen = ({match}) => {
+    const product = products.find((p) => p._id === match.params.id)
+    console.log(product);
     return (
         <div className="product-detail">
             <div className="product-image">
-                <img src="../../img/product.png" alt=""/>
+                <img src={product.image} alt={product.name}/>
             </div>
             <div className="product-details">
-                <p>NIKE Huararche 2019</p>
-                <h3>Get comfy and comfortable with the new 2019 designer
-sneaker for all your events </h3>
-                <h4>&#8358;45,000 - &#8358;80,000  </h4>
+                <p>{product.name}</p>
+                <h3>{product.description}</h3>
+                <h4>&#8358;{product.price}  </h4>
             </div>
             <div className="product-description">
                 <span>Product Description</span>
                 <div className="icon">
-                    <span class="iconify" data-icon="ic:outline-keyboard-arrow-right"></span>
+                    <span className="iconify" data-icon="ic:outline-keyboard-arrow-right"></span>
                 </div>
             </div>
             <div className="review">
@@ -24,12 +28,13 @@ sneaker for all your events </h3>
                     <button className="btn">View all</button>
                 </div>
                 <div className="icons">
-                    <span class="iconify iconify-fill" data-icon="ic:baseline-star" data-inline="false"></span>
-                    <span class="iconify iconify-fill" data-icon="ic:baseline-star" data-inline="false"></span>
-                    <span class="iconify iconify-fill" data-icon="ic:baseline-star" data-inline="false"></span>
-                    <span class="iconify iconify-empty" data-icon="ic:baseline-star" data-inline="false"></span>
-                    <span class="iconify iconify-empty" data-icon="ic:baseline-star" data-inline="false"></span>
-                    <span className="text">3.0</span>
+                    <Rating value={product.rating} text={`${product.numReviews}`} />
+                    {/* <span className="iconify iconify-fill" data-icon="ic:baseline-star" data-inline="false"></span>
+                    <span className="iconify iconify-fill" data-icon="ic:baseline-star" data-inline="false"></span>
+                    <span className="iconify iconify-fill" data-icon="ic:baseline-star" data-inline="false"></span>
+                    <span className="iconify iconify-empty" data-icon="ic:baseline-star" data-inline="false"></span>
+                    <span className="iconify iconify-empty" data-icon="ic:baseline-star" data-inline="false"></span>
+                    <span className="text">3.0</span> */}
                 </div>
                 <p>This is the best product I have used in a long while and the
 size fits perfectly and I love the colors!!!!!</p>
@@ -39,8 +44,8 @@ size fits perfectly and I love the colors!!!!!</p>
                 </div>
             </div>
             <div className="button-sections">
-                <button className="btn btn-cart cart-bk">Add to Cart</button>
-                <button className="btn btn-cart wishlist-bk">Wishlist</button>
+                <Link to="/"  className="btn btn-cart cart-bk">Add to Cart</Link>
+                <Link to="/" className="btn btn-cart wishlist-bk">Wishlist</Link>
             </div>
         </div>
     )

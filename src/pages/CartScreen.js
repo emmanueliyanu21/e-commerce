@@ -11,7 +11,7 @@ function CartScreen() {
                     </div>
                     <div className="cart-list-icon">
                         <div className="delete-section">
-                            <i class="iconify" data-icon="ic:baseline-delete" data-inline="false"></i>
+                            <i className="iconify" data-icon="ic:baseline-delete" data-inline="false"></i>
                             <span>Delete</span>
                         </div>
                     </div>
@@ -25,7 +25,7 @@ function CartScreen() {
                     </div>
                     <div className="cart-list-icon">
                         <div className="delete-section">
-                            <i class="iconify" data-icon="ic:baseline-delete" data-inline="false"></i>
+                            <i className="iconify" data-icon="ic:baseline-delete" data-inline="false"></i>
                             <span>Delete</span>
                         </div>
                     </div>
