@@ -70,7 +70,7 @@ const ProductScreen = ({ history, match }) => {
                 </div>
             </div>
             <div className="button-sections">
-                <Link to="/" onClick={addToCartHandler}  className="btn btn-cart cart-bk">Add to Cart</Link>
+                <Link onClick={addToCartHandler}  className="btn btn-cart cart-bk">Add to Cart</Link>
                 <Link to="/cart" className="btn btn-cart wishlist-bk">Wishlist</Link>
             </div>
             </div>

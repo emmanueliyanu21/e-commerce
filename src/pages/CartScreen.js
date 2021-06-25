@@ -16,7 +16,7 @@ function CartScreen({ match, location, history }) {
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart; 
 
-  console.log(cartItems);
+//   console.log(cartItems);
 
   useEffect(() => {
     if (productId) {
@@ -29,7 +29,7 @@ function CartScreen({ match, location, history }) {
   };
 
   const checkoutHandler = () => {
-    history.push("/login?redirect=shipping");
+    history.push("/success-page");
   };
 
     return (
@@ -43,15 +43,22 @@ function CartScreen({ match, location, history }) {
                         <h3>Cart</h3>
                     </div>
             </div>
-            <div className="cart-list-wrapper">
+            {cartItems.length === 0 ? (
+                <Message>
+                    Your Cart is empty <Link to="/">Go Back</Link>
+                </Message>
+            ) : (
+                    <div className="cart">
+                        {cartItems.map(item => {
+                            <div className="cart-list-wrapper" key={item.product}>
                 <div className="cart-list">
                     <div className="cart-list-image">
-                        <img src="../../img/product2.png" alt="" />
-                        <p>2019 Vintage Coca Cola</p>
+                        <img src={item.image} alt={item.name} />
+                        <p>{item.name}</p>
                         {/* <p>N18,099.09</p> */}
                     </div>
                     <div className="cart-list-icon">
-                        <div className="delete-section">
+                        <div className="delete-section" onClick={() => removeFromCartHandler(item.product)}>
                             <span className="iconify" data-icon="ic:baseline-delete" data-inline="false"></span>
                             <span>Delete</span>
                         </div>
@@ -61,38 +68,29 @@ function CartScreen({ match, location, history }) {
                             <i class="fas fa-plus"></i>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div className="cart-list-wrapper">
-                <div className="cart-list">
-                    <div className="cart-list-image">
-                        <img src="../../img/product1.png" alt="" />
-                        <p>2019 Vintage Coca Cola</p>
-                    </div>
-                     <div className="cart-list-icon">
-                        <div className="delete-section">
-                            <span className="iconify" data-icon="ic:baseline-delete" data-inline="false"></span>
-                            <span>Delete</span>
-                        </div>
-                        <div className="adjust-section">
-                            <i class="fas fa-minus"></i>
-                            <span>24</span>
-                            <i class="fas fa-plus"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className="cart-sub-total">
+                                </div>
+                                 <div className="cart-sub-total">
                 <div className="total">
                     <div>Subtotal</div>
                     <div>&#8358;18,099.09</div>
                 </div>
                 <div className="total">
                     <span>Total</span>
-                    <span className="number">&#8358;18,099.09</span>
+                                        <span className="number">&#8358;{
+                                            cartItems.reduce((acc, item) => acc + item.qty * item.price, 0).toFixed(2)
+                                        }</span>
                 </div>
-                <Link to="/success-page" className="btn btn-checkout">Checkout</Link>
+                <Link onClick={checkoutHandler} disabled={cartItems.length === 0} className="btn btn-checkout">Checkout</Link>
             </div>
+            </div>
+                        })}
+
+                        
+           
+            
+                    </div>
+            )}
+            
             <div className="product-cart-list">
                 <div className="review-header">
                     <span>Review and Ratings</span>
