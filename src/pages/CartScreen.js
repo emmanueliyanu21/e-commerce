@@ -1,8 +1,19 @@
 import React from 'react'
+import Header from '../components/Header.js'
+import { Link } from 'react-router-dom'
 
 function CartScreen() {
     return (
-        <div>
+        <div className="cart-body">
+            <Header />
+            <div className="cart-wrapper">
+                    <div className="ul-list">
+                        <i className="fas fa-angle-left"></i>
+                    </div>
+                    <div className="ul-list">
+                        <h3>Cart</h3>
+                    </div>
+            </div>
             <div className="cart-list-wrapper">
                 <div className="cart-list">
                     <div className="cart-list-image">
@@ -51,7 +62,7 @@ function CartScreen() {
                     <span>Total</span>
                     <span className="number">&#8358;18,099.09</span>
                 </div>
-                <button className="btn btn-checkout">Checkout</button>
+                <Link to="/success-page" className="btn btn-checkout">Checkout</Link>
             </div>
             <div className="product-cart-list">
                 <div className="review-header">

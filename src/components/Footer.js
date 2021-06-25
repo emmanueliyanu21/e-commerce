@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Footer() {
     return (
-        <div>
+        <div className="fixed-footer">
             <div className="footer">
                 <div className="footer-handler">
                     <img src="../../img/footerIcon/Home.png" alt="" />

@@ -1,5 +1,37 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap");
 
+.container {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.pl-1 {
+  padding-left: 4px;
+}
+
+.pl-2 {
+  padding-left: 9px;
+}
+
+.feature-right {
+  display: flex;
+}
+
+.feature-right h3 {
+  margin-bottom: 0px;
+}
+
+.phone-feature {
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+}
+
+.tran-bk {
+  background-color: transparent;
+  color: #fff;
+}
+
 .header h2 {
   font-size: 14px;
   font-family: "Noto Sans JP", sans-serif;
@@ -10,22 +42,77 @@
 .header-form input {
   border: none;
   background-color: #edf2f7;
-  width: 90%;
   padding: 10px;
   border-radius: 4px;
+  font-size: 14px;
+  color: #6f798b;
+  width: 96%;
+}
+
+.header-form {
+  padding-bottom: 20px;
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-right: 15px;
+  position: relative;
+}
+
+.header-form .iconify {
+  position: absolute;
+  top: 30px;
+  right: 18px;
+  color: #435768;
 }
 
 .list-wrapper {
   border: 1px solid #cbd6e0;
-  margin-bottom: 20px;
   display: flex;
   padding-top: 15px;
   padding-bottom: 15px;
   justify-content: space-evenly;
 }
 
-.header-form {
+.product-wrapper {
+  display: flex;
+  padding: 40px 20px 20px;
+  justify-content: space-between;
+}
+
+.cart-body {
+  background-color: #f9fafc;
+}
+
+.cart-wrapper {
+  display: flex;
+  padding: 40px 15px 10px 20px;
+  justify-content: left;
+  background-color: #fff;
   margin-bottom: 20px;
+}
+
+.cart-wrapper .ul-list h3 {
+  padding-left: 5rem;
+}
+
+.ul-list h3 {
+  margin-top: -5px;
+  font-size: 14px;
+  font-family: "Noto Sans JP", sans-serif;
+  color: #212c3d;
+  font-weight: 400;
+}
+
+.ul-list .fa-angle-left {
+  background-color: #cbd6e0;
+  padding: 3px 8px;
+  border-radius: 2px;
+}
+
+.list-wrapper .line-orders {
+  border-left: 0.5px solid #cbd6e0;
+  border-right: 0.5px solid #cbd6e0;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .ul-list .location {
@@ -34,16 +121,56 @@
   background-color: #edf2f7;
   border-radius: 50px;
   padding: 4px;
-  margin-right: 7px;
+  margin-right: 6px;
 }
 
 .ul-list {
   vertical-align: middle;
   align-items: center;
+  padding-top: 3px;
+  position: relative;
+}
+
+.ul-list .red-badge {
+  position: absolute;
+  color: #fff;
+  background-color: #e25959;
+  border-radius: 50px;
+  font-size: 9px;
+  padding: 4px 8px;
+  top: -7px;
+  left: 10px;
+  z-index: 9;
+}
+
+.ul-list .package-icon {
+  color: #7e42f5;
+  background-color: #edf2f7;
+  padding: 4px;
+  border-radius: 50px;
+  margin-right: 6px;
+}
+
+.ul-list .shopping-cart {
+  color: #000;
+  opacity: 0.6;
+  background-color: #edf2f7;
+  padding: 4px;
+  border-radius: 50px;
+  margin-right: 6px;
+}
+
+.ul-list span {
+  position: relative;
+  top: -7px;
+  font-size: 12px;
+  font-family: "Noto Sans JP", sans-serif;
 }
 
 .ul-list .fas {
-  margin-left: 5px;
+  margin-left: 7px;
+  position: relative;
+  top: -5px;
 }
 
 /* Header Styling Ends */
@@ -60,28 +187,38 @@
 }
 
 .categories img {
-  background-color: #227eff;
   width: 25px;
   padding: 15px;
   border-radius: 4px;
 }
 
-.img2 img {
+.categories .img1 {
+  background-color: #227eff;
+}
+
+.cat-icon {
+  padding: 15px;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 30px;
+}
+
+.categories .img2 {
   background-color: #ee6f44;
 }
 
-.img3 img {
+.categories .img3 {
   background-color: #7e42f5;
 }
 
-.img4 img {
+.categories .img4 {
   background-color: #05944f;
 }
 
 .categoriesgroup {
   display: flex;
   padding-top: 30px;
-  padding-bottom: 30px;
+  padding-bottom: 15px;
   margin: auto;
   justify-content: space-evenly;
 }
@@ -142,30 +279,40 @@
 
 .herosection h2 {
   font-weight: bold;
-  font-size: 16px;
+  font-size: 12px;
   font-family: "Noto Sans JP", sans-serif;
   color: #fff;
+  width: 50%;
 }
 
-.herosection {
+.herosection-content {
   display: flex;
-  padding: 30px 10px;
-  justify-content: space-evenly;
+  padding: 30px 15px;
+  justify-content: space-between;
 }
 
 .herosection span {
   color: #ee6f44;
 }
 
-.herosection .btn-contact {
+.herosectionContent {
+  padding: 20px 20px;
+}
+
+.btn-contact {
   background-color: #227eff;
   border: none;
   border-radius: 4px;
   color: #fff;
-  font-weight: bold;
-  padding: 20px 15px;
-  height: 30px;
-  vertical-align: middle;
+  font-size: 14px;
+  text-decoration: none;
+  text-align: center;
+  max-width: 50%;
+  height: 35px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 7px;
+  /* margin-left: 20px; */
 }
 
 @media only screen and (max-width: 768px) {
@@ -176,25 +323,50 @@
 
 /* Success Page */
 .success-bk {
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 }
+
 .success-page img {
-  max-width: 100%;
+  max-width: 50%;
+  margin-top: 7rem;
 }
 
 .success-page {
-  position: absolute;
+  text-align: center;
+  /* position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
+}
+
+.success-details h2 {
+  color: #fff;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 24px;
+  margin-bottom: 0px;
+}
+
+.success-details p {
+  color: #fff;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.success-details {
+  text-align: center;
+}
+
+.button-container {
+  text-align: center;
+  margin-top: 8rem;
 }
 
 .btn-success {
   background-color: #fff;
-  display: block;
-  width: 100%;
+  width: 90%;
   padding-top: 10px;
   padding-bottom: 10px;
   font-family: "Noto Sans JP", sans-serif;
@@ -380,8 +552,13 @@
   font-family: "Noto Sans JP", sans-serif;
 }
 
+.product-details span {
+  font: 12px;
+}
+
 .product-image img {
   width: 100%;
+  font-family: "Noto Sans JP", sans-serif;
 }
 
 .product-image {
@@ -413,6 +590,10 @@
   display: flex;
   justify-content: space-between;
   padding-bottom: 25px;
+}
+
+.cart-sub-total a {
+  text-decoration: none;
 }
 
 .cart-sub-total .total .number {
@@ -447,7 +628,8 @@
 
 .btn-checkout {
   display: block;
-  width: 100%;
+  text-align: center;
+  width: 90%;
   background-color: #227eff;
   padding: 20px;
   border: 0;
@@ -530,6 +712,13 @@
   justify-content: space-evenly;
   background-color: #fff;
   box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.3);
+}
+
+.fixed-footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .footer-buy {

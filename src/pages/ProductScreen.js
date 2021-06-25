@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
+import Header from '../components/Header.js'
 // import products from '../products'
 import Rating from '../components/Rating'
 import axios from 'axios'
@@ -18,6 +19,20 @@ const ProductScreen = ({match}) => {
     
     // console.log(product);
     return (
+        <>
+            <Header />
+            <div className="product-wrapper">
+                    <div className="ul-list">
+                        <i className="fas fa-angle-left"></i>
+                    </div>
+                    <div className="ul-list">
+                        <h3>Details</h3>
+                    </div>
+                <div className="ul-list">
+                        <span className="red-badge">9</span>
+                        <span class="iconify shopping-cart" data-icon="ic:baseline-shopping-cart" data-inline="false"></span>
+                    </div>
+            </div>
         <div className="product-detail">
             <div className="product-image">
                 <img src={product.image} alt={product.name}/>
@@ -49,10 +64,11 @@ size fits perfectly and I love the colors!!!!!</p>
                 </div>
             </div>
             <div className="button-sections">
-                <Link to="/cart"  className="btn btn-cart cart-bk">Add to Cart</Link>
-                <Link to="/" className="btn btn-cart wishlist-bk">Wishlist</Link>
+                <Link to="/"  className="btn btn-cart cart-bk">Add to Cart</Link>
+                <Link to="/cart" className="btn btn-cart wishlist-bk">Wishlist</Link>
             </div>
-        </div>
+            </div>
+            </>
     )
 }
 

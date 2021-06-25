@@ -2,7 +2,12 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Product from '../components/Product.js'
 import Footer from '../components/Footer.js'
+import Header from '../components/Header.js'
+import Search from '../components/Search.js'
 import { listProducts } from '../actions/productActions'
+import Message from '../components/Message';
+import Loader from '../components/Loader';
+// import { Link } from 'react-router-dom'
 
 
 function HomeScreen() {
@@ -18,55 +23,54 @@ function HomeScreen() {
     // const products = []
 
     return (
-        <>
-            {loading ? (<h2>Loading...</h2>) : error ? (<h3>{error}</h3>) : 
-                <div>
+        <div >
+            {loading ? (<h2>
+                <Loader />
+            </h2>) : error ? (
+                    <Message variant="danger">{error}</Message>
+                ) :
+                <div className="home-wrapper">
                     <div className="header">
-                <h2>Trollbasket</h2>
+                        <Header />
+                <h2 className="container">Trollbasket</h2>
                 <div className="list-wrapper">
                     <div className="ul-list">
-                    <span className="iconify" data-icon="ant-design:shopping-cart-outlined" ></span>
-                    <span>Lagos</span>
-                    <i className="fas fa-angle-down"></i>
-                </div>
-                    <div className="ul-list">
-                    <i className="iconify" data-icon="mdi:package" ></i>
-                    <span>My Orders</span>
-                    <i></i>
-                </div>
-                    <div className="ul-list">
-                        <span className="iconify" data-icon="ant-design:shopping-cart-outlined" ></span>
-                    <span>Cart</span>
-                    <i></i>
+                        <span class="iconify location" data-icon="fluent:location-12-filled" data-inline="false"></span>                    <span>Lagos</span>
+                        <i className="fas fa-angle-down"></i>
                     </div>
+                    <div className="ul-list line-orders">
+                        <i className="iconify package-icon" data-icon="mdi:package" ></i>
+                        <span>My Orders</span>
+                        <i></i>
                     </div>
+                            <div className="ul-list">
+                                <span className="red-badge">9</span>
+                                <span class="iconify shopping-cart" data-icon="ic:baseline-shopping-cart" data-inline="false"></span>
+                                <span>Cart</span>
+                        <i></i>
+                    </div>
+                </div>
                 
-                <div className="header-form">
-                <form action="">
-                    <input type="text" placeholder="Search merchbuy"/>
-                    </form>
-                    </div>
+                <Search />
             </div>
                     <div className="herosection">
-                <h2>Having any <span>issues</span> <br/> with your order? </h2>
-                <button className="btn btn-contact">Contact Us</button>
-            </div>
+                        <div className="herosection-content">
+                            <h2>Having any <span>issues</span>  with your order? </h2>
+                            <button  className="btn-contact">Contact Us</button>
+                        </div>
+                    </div>
             <div className="categoriesgroup">
             <div className="categories">
-                <img src="../../img/document.png" alt=""/>
-                <p>Product  Categories</p>
+<span class="iconify img1 cat-icon" data-icon="teenyicons:text-document-solid" data-inline="false"></span>                <p>Product  Categories</p>
             </div>
-            <div className="categories img2">
-                <img src="../../img/document.png" alt=""/>
-                <p>Popular  Products</p>
+            <div className="categories">
+<span class="iconify img2 cat-icon" data-icon="icomoon-free:fire" data-inline="false"></span>                <p>Popular  Products</p>
             </div>
-            <div className="categories img3">
-                <img src="../../img/document.png" alt=""/>
-                <p>Recommended  Products</p>
+            <div className="categories">
+<span class="iconify img3 cat-icon" data-icon="fa-regular:hand-point-right" data-inline="false"></span>                <p>Recommended  Products</p>
             </div>
-            <div className="categories img4">
-                <img src="../../img/document.png" alt=""/>
-                <p>Shops</p>
+            <div className="categories">
+<span class="iconify img4 cat-icon" data-icon="entypo:shop" data-inline="false"></span>                <p>Shops</p>
             </div>
             </div>
             
@@ -81,7 +85,7 @@ function HomeScreen() {
             }
             
             <Footer />
-        </>
+        </div>
     )
 }
 
