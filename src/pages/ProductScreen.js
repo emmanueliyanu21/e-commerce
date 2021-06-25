@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import Header from '../components/Header.js'
 import Rating from '../components/Rating'
@@ -7,7 +7,8 @@ import { listProductDetails } from "../actions/productActions"
 import Message from '../components/Message';
 import Loader from '../components/Loader';
 
-const ProductScreen = ({match}) => {
+const ProductScreen = ({ history, match }) => {
+    const [qty, setQty] = useState(0);
     const dispatch = useDispatch()
 
     const productDetails = useSelector(state => state.productDetails)
@@ -16,6 +17,10 @@ const ProductScreen = ({match}) => {
      useEffect(() => {
         dispatch(listProductDetails(match.params.id))
      }, [dispatch, match])
+    
+    const addToCartHandler = () => {
+        history.push(`/cart/${match.params.id}`)
+    }
     
     return (
         <>
@@ -58,14 +63,14 @@ const ProductScreen = ({match}) => {
                     <Rating value={product.rating} text={`${product.numReviews}`} />
                 </div>
                 <p>This is the best product I have used in a long while and the
-size fits perfectly and I love the colors!!!!!</p>
+                    size fits perfectly and I love the colors!!!!!</p>
                 <div className="review-name">
                     <img src="../../img/segun_arinze.png" alt="" />
                     <span>Segun Arinze</span>
                 </div>
             </div>
             <div className="button-sections">
-                <Link to="/"  className="btn btn-cart cart-bk">Add to Cart</Link>
+                <Link to="/" onClick={addToCartHandler}  className="btn btn-cart cart-bk">Add to Cart</Link>
                 <Link to="/cart" className="btn btn-cart wishlist-bk">Wishlist</Link>
             </div>
             </div>
